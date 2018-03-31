@@ -1,0 +1,44 @@
+EECS338
+Final Project
+TungHo Lin
+pseudocode for final version
+
+
+void routeOne() {
+	while(bus1 hasn't reached destination) {
+		if(bus1 comes to an intersection) {
+			wait for a green light
+			//critical section
+			move bus1 into intersection
+			move bus1 out of intersection and into the next position
+			//end critical section
+		}
+		else
+			move bus1 into the next position
+		wait for bus2 to finish its step before looping back
+	}
+}
+
+void routeTwo() {
+	while(bus2 hasn't reached destination) {
+		if(bus2 comes to an intersection) {
+			wait for a green light
+			//critical section
+			move bus2 into intersection
+			move bus2 out of intersection and into the next position
+			//end critical section
+		}
+		else
+			move bus2 into the next position
+		signal bus1 that it has finished its step
+	}
+}
+
+void trafficLights() {
+	while(the buses hasn't reached destination) {
+		wait for a certain amount of time
+		change the lights
+	}
+}
+			
+			
